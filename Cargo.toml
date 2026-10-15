@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2026 roolrz
+# SPDX-License-Identifier: Apache-2.0
+
+[package]
+workspace = "../../app"
+name = "hyper-bootstrap-retire"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "hyper-bootstrap-retire"
+path = "src/main.rs"
+test = false
+bench = false
+
+[dependencies]
+hyper-os.workspace = true
+hyper-rt.workspace = true
+hyper-service-ipc.workspace = true
+serde_json.workspace = true
+hyper-bootstrap-handoff.workspace = true
+
+[lints]
+workspace = true
