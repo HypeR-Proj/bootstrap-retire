@@ -1,9 +1,7 @@
 # SPDX-FileCopyrightText: 2026 roolrz
 # SPDX-License-Identifier: Apache-2.0
 
-bin = [
-    { name = "hyper-bootstrap-retire", path = "src/main.rs", test = false, bench = false },
-]
+bin = [{name = "hyper-bootstrap-retire", path = "src/main.rs", test = false, bench = false}]
 
 [package]
 name = "hyper-bootstrap-retire"
@@ -12,24 +10,27 @@ edition = "2024"
 license = "Apache-2.0"
 publish = false
 repository = "https://github.com/HypeR-Proj/bootstrap-retire"
+workspace = "../../app"
+
+[dependencies]
 
 [dependencies.hyper-os]
-version = "=0.0.0"
+workspace = true
 
 [dependencies.hyper-rt]
-version = "=0.0.0"
-features = [
-    "std",
-]
+workspace = true
+features = ["std"]
 
 [dependencies.hyper-service-ipc]
-version = "=0.0.0"
+workspace = true
 
 [dependencies.serde_json]
-version = "1"
+workspace = true
 
 [dependencies.hyper-bootstrap-handoff]
-version = "=0.0.0"
+workspace = true
+
+[lints]
 
 [lints.clippy]
 doc_markdown = "deny"
@@ -48,12 +49,4 @@ unsafe_op_in_unsafe_fn = "deny"
 
 [lints.rust.unexpected_cfgs]
 level = "warn"
-check-cfg = [
-    "cfg(target_os, values(\"hyper\"))",
-]
-
-[workspace]
-members = [
-    ".",
-]
-resolver = "3"
+check-cfg = ["cfg(target_os, values(\"hyper\"))"]
