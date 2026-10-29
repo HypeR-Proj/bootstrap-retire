@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "name": "bootstrap-retire",
+  "kind": "service",
+  "origin": {
+    "repository": "https://github.com/roolrz/HypeR",
+    "commit": "8d42d047058a2b58a291803700e86487fb723f7a"
+  },
+  "sources": {
+    "Cargo.toml": "svc/bootstrap-retire/Cargo.toml",
+    "component.mk": "svc/bootstrap-retire/component.mk",
+    "src/main.rs": "svc/bootstrap-retire/src/main.rs"
+  },
+  "SPDX-FileCopyrightText": "2026 roolrz",
+  "SPDX-License-Identifier": "Apache-2.0",
+  "mounts": {
+    "": "svc/bootstrap-retire"
+  },
+  "packages": [
+    "hyper-bootstrap-retire"
+  ],
+  "tests": [
+    [
+      "make",
+      "app-test",
+      "APP_TEST_PACKAGE=hyper-bootstrap-retire"
+    ]
+  ]
+}
